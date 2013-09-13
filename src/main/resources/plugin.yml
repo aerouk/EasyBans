@@ -1,0 +1,7 @@
+author: iAero
+database: false
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: us.kpvpdev.easybans.EasyBans
+name: EasyBans
+startup: postworld
+version: 0.3.1
