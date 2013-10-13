@@ -8,24 +8,31 @@ import org.bukkit.entity.Player;
 
 import us.kpvpdev.easybans.EasyBans;
 
-public class Ban implements CommandExecutor {
-
+public class Ban implements CommandExecutor
+{
     final EasyBans plugin;
 
-    public Ban(EasyBans instance) {
+    public Ban(EasyBans instance)
+    {
         plugin = instance;
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(sender.isOp() || sender.hasPermission("easybans.ban")) {
-            if(args.length == 0) {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+    {
+        if (sender.isOp() || sender.hasPermission("easybans.ban"))
+        {
+            if (args.length == 0)
+            {
                 sender.sendMessage(plugin.prefix + "Usage: /" + label + " <player> <reason>");
-            } else if(args.length == 1) {
+            }
+            else if (args.length == 1)
+            {
                 Player target = plugin.getServer().getPlayer(args[0]);
                 OfflinePlayer offlineTarget = plugin.getServer().getOfflinePlayer(args[0]);
 
-                if(target != null) {
+                if (target != null)
+                {
                     String reason = "Banned!";
 
                     target.kickPlayer("You were banned from the server.\nReason: §c" + reason);
@@ -35,7 +42,9 @@ public class Ban implements CommandExecutor {
 
                     plugin.banconfig.getConfig().set(target.getName().toLowerCase(), reason);
                     plugin.banconfig.saveConfig();
-                } else {
+                }
+                else
+                {
                     String reason = "Banned!";
 
                     offlineTarget.setBanned(true);
@@ -45,14 +54,18 @@ public class Ban implements CommandExecutor {
                     plugin.banconfig.getConfig().set(offlineTarget.getName().toLowerCase(), reason);
                     plugin.banconfig.saveConfig();
                 }
-            } else if(args.length >= 2) {
+            }
+            else if (args.length >= 2)
+            {
                 Player target = plugin.getServer().getPlayer(args[0]);
                 OfflinePlayer offlineTarget = plugin.getServer().getOfflinePlayer(args[0]);
 
-                if(target != null) {
+                if (target != null)
+                {
                     String reason = "";
 
-                    for(int i = 1; i < args.length; i++) {
+                    for (int i = 1; i < args.length; i++)
+                    {
                         reason = reason + args[i] + " ";
                     }
 
@@ -63,10 +76,13 @@ public class Ban implements CommandExecutor {
 
                     plugin.banconfig.getConfig().set(target.getName().toLowerCase(), reason);
                     plugin.banconfig.saveConfig();
-                } else {
+                }
+                else
+                {
                     String reason = "";
 
-                    for(int i = 1; i < args.length; i++) {
+                    for (int i = 1; i < args.length; i++)
+                    {
                         reason = reason + args[i] + " ";
                     }
 
@@ -82,5 +98,4 @@ public class Ban implements CommandExecutor {
 
         return false;
     }
-
 }

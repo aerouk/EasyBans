@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.iaero.easybans</groupId>
     <artifactId>EasyBans</artifactId>
-    <version>0.3.1</version>
+    <version>0.3.2</version>
     <name>EasyBans</name>
     <repositories>
         <repository>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.6.2-R1.0</version>
+            <version>1.6.4-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
