@@ -21,11 +21,11 @@ public class Unban implements CommandExecutor
     {
         if ((sender.isOp()) || (sender.hasPermission("easybans.unban")))
         {
-            if (args.length == 0)
+            if (args.length < 1)
             {
                 sender.sendMessage(plugin.prefix + "§7" + "Usage: /" + label + " <player>");
             }
-            else if (args.length >= 1)
+            else if (args.length > 0)
             {
                 OfflinePlayer target = plugin.getServer().getOfflinePlayer(args[0]);
 

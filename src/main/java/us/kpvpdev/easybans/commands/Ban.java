@@ -22,7 +22,7 @@ public class Ban implements CommandExecutor
     {
         if (sender.isOp() || sender.hasPermission("easybans.ban"))
         {
-            if (args.length == 0)
+            if (args.length < 1)
             {
                 sender.sendMessage(plugin.prefix + "Usage: /" + label + " <player> <reason>");
             }
@@ -55,7 +55,7 @@ public class Ban implements CommandExecutor
                     plugin.banconfig.saveConfig();
                 }
             }
-            else if (args.length >= 2)
+            else if (args.length > 1)
             {
                 Player target = plugin.getServer().getPlayer(args[0]);
                 OfflinePlayer offlineTarget = plugin.getServer().getOfflinePlayer(args[0]);

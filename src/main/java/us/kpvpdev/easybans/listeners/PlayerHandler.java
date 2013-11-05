@@ -22,7 +22,7 @@ public class PlayerHandler implements Listener
     {
         String player = event.getName().toLowerCase();
 
-        if (plugin.banconfig.getConfig().getString(player) !=null)
+        if (plugin.banconfig.getConfig().getString(player) != null)
         {
             event.disallow(Result.KICK_BANNED, "You are banned from this server." + "\n" + "Reason: §c" + plugin.banconfig.getConfig().getString(player));
         }

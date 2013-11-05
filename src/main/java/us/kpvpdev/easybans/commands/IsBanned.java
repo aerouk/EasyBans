@@ -20,7 +20,7 @@ public class IsBanned implements CommandExecutor
     {
         if (sender.isOp() || sender.hasPermission("easybans.check"))
         {
-            if (args.length == 0)
+            if (args.length < 1)
             {
                 sender.sendMessage(plugin.prefix + "Usage: /" + label + " <player>");
             }
